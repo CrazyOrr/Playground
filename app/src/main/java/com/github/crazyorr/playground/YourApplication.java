@@ -8,9 +8,9 @@ import com.github.crazyorr.playground.di.component.DaggerYourApplicationComponen
 import javax.inject.Inject;
 
 import dagger.android.DispatchingAndroidInjector;
-import dagger.android.HasDispatchingActivityInjector;
+import dagger.android.HasActivityInjector;
 
-public class YourApplication extends Application implements HasDispatchingActivityInjector {
+public class YourApplication extends Application implements HasActivityInjector {
     @Inject
     DispatchingAndroidInjector<Activity> dispatchingActivityInjector;
 

@@ -12,6 +12,6 @@ public class UserModule {
     @Provides
     @Singleton
     static User providesUser() {
-        return new User("Lei", "Wang");
+        return new User("John", "Doe");
     }
 }

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
@@ -11,50 +10,35 @@
             type="com.github.crazyorr.playground.model.User" />
     </data>
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/container"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.github.crazyorr.playground.activity.YourActivity">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <EditText
+            android:id="@+id/et_first_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:inputType="text"
+            android:text="@={user.firstName}" />
 
-            <EditText
-                android:id="@+id/et_first_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:text="@={user.firstName}" />
+        <EditText
+            android:id="@+id/et_last_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:text="@={user.lastName}" />
 
-            <EditText
-                android:id="@+id/et_last_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:text="@={user.lastName}" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{user.toString}" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@{user.toString}" />
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-            <CheckBox
-                android:id="@+id/cb"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="@string/show_button" />
+    </LinearLayout>
 
-            <Button
-                android:id="@+id/btn_toast"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/toast"
-                android:visibility="@{cb.checked ? View.VISIBLE : View.GONE}" />
-        </LinearLayout>
-
-    </android.support.constraint.ConstraintLayout>
 </layout>
